@@ -10,6 +10,7 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+        ('share/patrol_robot/launch', ['patrol_robot/launch/patrol.launch.py']),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -24,6 +25,8 @@ setup(
     },
     entry_points={
         'console_scripts': [
+            'move_forward = patrol_robot.move_forward:main',
+            'patrol_node = patrol_robot.patrol_node:main', 
         ],
     },
 )
